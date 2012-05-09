@@ -1,0 +1,56 @@
+button.lsb {
+	display: none;
+}
+
+div#gbg {
+	
+	display: none;
+	
+}
+
+div#logocont {
+	
+	display: none;
+	
+}
+
+div#main {
+	margin-top: 200px;
+}
+
+div#searchform {
+    margin: auto;
+    width: 272px;
+}
+
+ol {
+	list-style-type: none;
+}
+	
+	ol li {
+		display: inline-block;
+		list-style: none;
+	}
+
+img#hplogo {
+	background: url("../img/logo.png") no-repeat;
+    height: 181px;
+    width: 506px;
+}
+
+input#lst-ib {
+    border: 1px solid #CCCCCC;
+    padding: 5px;
+}
+
+li:last-child {
+	
+	display: none;
+	
+}
+
+p {
+	
+	display: none;
+	
+}
