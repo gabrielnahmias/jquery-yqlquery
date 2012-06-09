@@ -22,7 +22,7 @@
 	
 	var methods = {
 		
-		getHTML: function (oOptions) {
+		getHTML: function(oOptions) {
 			
 			var sURL = oOptions.url;
 			
@@ -32,7 +32,7 @@
 			
 		},
 		
-		OAuthURL: function (sCK, sCKS, sStatement) {
+		OAuthURL: function(sCK, sCKS, sStatement) {
 			
 			var oAccessor = {
 				
