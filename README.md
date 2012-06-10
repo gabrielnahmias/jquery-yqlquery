@@ -51,10 +51,10 @@ $.yql( {
 } );
 ```
 
-**NOTE:** `query` is the only required property.  That makes `key`, `format` (assumed `"json"`), and `secret` not required (neither is `success` but... _wtf_).
+**NOTE:** `query` is the only required property.  That makes `key`, `format` (assumed `"json"`), and `secret` not so (neither is `success` but... _wtf_).
 
 The previous code loads some stock information and logs it to the console. ```query``` is, of course, the query to run,
-```success``` is the callback function, ```format``` is the type in which the data should be returned, ```key``` and
+```success``` is the callback function, ```format``` is the type in which the data should be returned (`"json"`, `"text"`, `"xml"`, ...), ```key``` and
 ```secret``` have to do with if you register an official application, and success is as mentioned before.  The argument
 passed to the success function is the data which has been loaded.  There's also a built-in function called ```getHTML```
 which goes a little something like this:
