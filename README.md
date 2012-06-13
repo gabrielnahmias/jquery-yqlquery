@@ -88,7 +88,7 @@ var a;$.yql({async: false,query:"select * from yahoo.finance.quotes where symbol
 ```javascript
 
 if ( parseFloat(a.query.results.quote.LastTradePriceOnly) < 5 )
-	alert('OMG, buy some Microsoft stock.  It's cheap as hell right now.);
+	alert("OMG, buy some Microsoft stock.  It's cheap as hell right now.");
 
 ```
 
