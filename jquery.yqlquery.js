@@ -1,4 +1,4 @@
-/**
+/*!
  * yqlQuery v1.0.0
  * http://github.com/terrasoftlabs/jquery-yqlquery
  *
@@ -170,7 +170,7 @@
 		
 	};
 
-	$.yql = function (method) {
+	$.yql = function(method) {
 		
 		// Main execution.
 		
