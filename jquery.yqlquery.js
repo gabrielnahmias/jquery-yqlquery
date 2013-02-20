@@ -8,6 +8,15 @@
  *
  */
 
+/* TODO:	Create global data object that includes all the information to pass to the URL.
+ *			
+ *			Make this reflect some of the other YQL implementations on GitHub like:
+ *			https://github.com/hail2u/jquery.query-yql
+ *			
+ *			Change OAuthURL method to different name and make it generate array of information to add
+ *			to data object.
+ */
+
 ( function ($) {
 	
 	// Include minified copies of required code.
@@ -36,7 +45,7 @@
 			
 		},
 		
-		OAuthURL: function(sCK, sCKS, sStatement) {
+		_OAuthURL: function(sCK, sCKS, sStatement) {
 			
 			// Encode URL for authorization.
 			
@@ -108,9 +117,10 @@
 		 	
 			var sLoc = "";
 			
-			for (var x in aParams)
-				sLoc += aParams[x] + "&";                
-			
+			for (var x in aParams){
+				sLoc += aParams[x] + "&";
+				console.debug(aParams[x]);
+			}
 			var sFinal = sBase[1][0] + "?" + sLoc.slice(0, sLoc.length - 1);
 		 
 			return sFinal;
@@ -135,9 +145,11 @@
 			
 			
 			if (oSettings.key && oSettings.secret)
-				sURL = methods.OAuthURL(oSettings.key, oSettings.secret , sYQLURL);
+				sURL = methods._OAuthURL(oSettings.key, oSettings.secret , sYQLURL);
 			else
 				sURL = sYQLURL;
+			
+			console.debug("URL after OAuth added:",sURL);
 			
 			$.ajax( {
 				
@@ -159,7 +171,7 @@
 			var sQuery = oOptions.query;
 			
 			if (!sQuery)
-				throw new Error(sErrorPrefix + 'No query specified for method "yqlURL."');
+				$.error(sErrorPrefix + 'No query specified for method "yqlURL."');
 			
 			var sEncoded = encodeURIComponent( sQuery.toLowerCase() ),
 				sURL = 'http://query.yahooapis.com/v1/public/yql?q=' + sEncoded + '&env=http://datatables.org/alltables.env&format=' + sFormat;
